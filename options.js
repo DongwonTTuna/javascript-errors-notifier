@@ -43,6 +43,8 @@ function filloutOptions() {
     'showPopupOnMouseOver',
     'showTrace',
     'showDetailOnIncludeDomains',
+    'filterErrorList',
+    'toggleFilterError'
   ]
 
   if (options['notificationIconOpacity'] == undefined) {

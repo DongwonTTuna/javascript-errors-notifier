@@ -35,6 +35,7 @@ new (function () {
   }
 
   function showErrorNotification(popupUrl) {
+    if (!options) return
     if (options.showPopup || (options.showDetailOnIncludeDomains && options.includeDomains.indexOf(getBaseHostByUrl(window.location.href)) + 1)) {
       showPopup(popupUrl)
     }
@@ -83,7 +84,9 @@ new (function () {
       lastError.line == error.line &&
       lastError.col == error.col
     var isWrongUrl = !error.url || error.url.indexOf('://') === -1
-    if (!isSameAsLast && !isWrongUrl) {
+    var isFilterErr = options.filterErrorList.split('\n').some((f)=> error.stack.includes(f)) && options.toggleFilterError
+
+    if (!isSameAsLast && !isWrongUrl && !isFilterErr) {
       errors.push(error)
       if (errors.length > errorsLimit) {
         errors.shift()

@@ -54,22 +54,24 @@
       ignore404others: false,
       ignoreConnectionRefused: false,
       ignoreConsoleError: false,
-      ignoreBlockedByClient: true,
-      ignoreExternal: true,
-      includeDomains: '',
+      ignoreBlockedByClient: false,
+      ignoreExternal: false,
+      includeDomains: 'localhost\nhoikushibank.com',
       linkStackOverflow: false,
       linkViewSource: false,
       notificationIconOpacity: 100,
       popupMaxHeight: 40,
       popupMaxWidth: 70,
-      relativeErrorUrl: true,
+      relativeErrorUrl: false,
       showColumn: false,
-      showIcon: true,
-      hideInPage: true,
+      showIcon: false,
+      hideInPage: false,
       showPopup: false,
       showPopupOnMouseOver: false,
       showTrace: false,
-      showDetailOnIncludeDomains: false,
+      showDetailOnIncludeDomains: true,
+      filterErrorList: 'cdn-blocks.karte.io',
+      toggleFilterError: true,
     }
     for (var option in optionsValues) {
       var value = optionsValues[option]
@@ -174,6 +176,8 @@
       iconSize: await LS.getItem('iconSize'),
       notificationIconOpacity: await LS.getItem('notificationIconOpacity'),
       showDetailOnIncludeDomains: await LS.getItem('showDetailOnIncludeDomains'),
+      filterErrorList: await LS.getItem('filterErrorList'),
+      toggleFilterError: await LS.getItem('toggleFilterError'),
     }
   }
 

@@ -110,7 +110,7 @@
         </label>
       </p>
       <p>
-        Include domains - disable 'icon on all domains' to use only these domains.<br>Domains include subdomains; i.e. mydomain.com = *.mydomain.com
+        ポップアップを表示するドメインを追加する<br/>・複数のドメインを入力する場合は、改行で区切ってください。
         <label>     
           <textarea id="includeDomains" rows="3" style="width: 80%; max-width: 80%;"></textarea>
         </label>
@@ -119,7 +119,20 @@
               type="checkbox"
               id="showDetailOnIncludeDomains"
           />
-          show error details on these domains
+          指定したドメインでエラーの詳細を表示する
+        </label>
+      </p>
+      <p>
+        フィルターするエラーのキーワード<br/>・複数のキーワードを入力する場合は、改行で区切ってください。
+        <label>
+          <textarea id="filterErrorList" rows="3" style="width: 80%; max-width: 80%;"></textarea>
+        </label>
+        <label>
+          <input
+              type="checkbox"
+              id="toggleFilterError"
+          />
+          エラーのキーワードをフィルターする
         </label>
       </p>
       <p>
